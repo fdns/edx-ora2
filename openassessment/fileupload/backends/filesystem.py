@@ -1,3 +1,4 @@
+import os
 from django.conf import settings
 import django.core.cache
 from django.core.urlresolvers import reverse_lazy
@@ -38,7 +39,11 @@ class Backend(BaseBackend):
         return self._get_url(key)
 
     def get_download_url(self, key):
-        make_download_url_available(self._get_key_name(key), self.DOWNLOAD_URL_TIMEOUT)
+        from openassessment.fileupload.views_filesystem import get_file_path
+        url_key_name = self._get_key_name(key)
+        if not os.path.exists(get_file_path(url_key_name)):
+            raise exceptions.FileUploadInternalError("File not found in filesystem")
+        make_download_url_available(url_key_name, self.DOWNLOAD_URL_TIMEOUT)
         return self._get_url(key)
 
     def remove_file(self, key):
