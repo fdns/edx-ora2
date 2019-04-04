@@ -535,7 +535,7 @@ class Assessment(models.Model):
 
         """
         # Overwritting ora2 median to average
-        return Assessment.get_average_score(scores)
+        #return Assessment.get_average_score(scores)
 
         total_criterion_scores = len(scores)
         sorted_scores = sorted(scores)
