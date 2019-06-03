@@ -349,7 +349,7 @@ class SubmissionMixin(object):
         try:
             return file_upload_api.get_download_url(self._get_student_item_key(file_num))
         except FileUploadError:
-            logger.exception("Error retrieving download URL.")
+            logger.info("Error retrieving download URL.")
             return ''
 
     def _get_student_item_key(self, num=0):
