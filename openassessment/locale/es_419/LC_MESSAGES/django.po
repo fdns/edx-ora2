@@ -1246,7 +1246,7 @@ msgstr "La fecha límite para este paso se ha vencido. El paso está cerrado. Ya
 #: openassessment/templates/openassessmentblock/staff/oa_staff_grade.html:13
 #: openassessment/xblock/grade_mixin.py:348
 msgid "Staff Grade"
-msgstr "Calificación del Personal de soporte"
+msgstr "Calificación del equipo del curso"
 
 #: openassessment/templates/openassessmentblock/staff_area/oa_staff_area.html:6
 #: openassessment/templates/openassessmentblock/staff_area/oa_staff_area.html:17
